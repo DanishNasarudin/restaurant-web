@@ -10,10 +10,12 @@ function App() {
       <div className="navbar__bg">
         <Navbar />
       </div>
-      <Header />
-      <Features />
-      <Socials />
-      <Footer />
+      <div className="App__container">
+        <Header />
+        <Features />
+        <Socials />
+        <Footer />
+      </div>
     </div>
   );
 }

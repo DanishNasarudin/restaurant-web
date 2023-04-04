@@ -3,3 +3,4 @@ export { default as Form } from "./form/Form";
 export { default as Location } from "./location/Location";
 export { default as Navbar } from "./navbar/Navbar";
 export { default as Social } from "./social/Social";
+export { default as Button } from "./button/Button";

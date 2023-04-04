@@ -1,0 +1,19 @@
+.button__container {
+  padding: 1rem 2rem;
+  border-radius: 20px;
+  color: black;
+  background-color: var(--color-subtext);
+  transition: all 0.2s ease-in-out;
+}
+
+.button__text {
+  font-family: var(--font-family);
+  font-weight: 700;
+}
+
+@media (hover: hover) {
+  .button__container:hover {
+    color: white;
+    background-color: black;
+  }
+}
