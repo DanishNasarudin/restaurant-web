@@ -1,6 +1,7 @@
 import React from "react";
 import "./header.css";
-import logo from "../../assets/MatRock-logo.svg";
+import graphic from "../../assets/hero-graphic.png";
+import { Button } from "../../components";
 
 const Header = () => {
   return (
@@ -9,13 +10,16 @@ const Header = () => {
         <h1 className="header__texts-title">
           Mat Rock Special <br /> Turmeric Fried Chicken
         </h1>
-        <p className="header__texts-description">
+        <p>
           Enjoy a spicy turmeric fried dish with chicken, meat, squid, or shrimp
           served with a special sambal.
         </p>
+        <p>
+          <Button links="#test" text="Order Now" />
+        </p>
       </div>
       <div className="header__artwork">
-        <img src={logo} alt="logo" />
+        <img src={graphic} alt="graphic" />
       </div>
     </div>
   );

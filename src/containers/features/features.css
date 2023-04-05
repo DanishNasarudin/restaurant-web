@@ -1,0 +1,22 @@
+.features__container {
+  width: 100%;
+  margin: var(--margin-64px-32px) 0;
+}
+
+.features__title {
+  font-family: var(--font-family);
+  margin: var(--margin-32px-16px);
+  text-align: center;
+}
+
+.features__column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--margin-16px-8px);
+}
+
+.features__rows {
+  display: flex;
+  justify-content: space-around;
+  gap: var(--margin-16px-8px);
+}

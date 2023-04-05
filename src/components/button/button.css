@@ -1,4 +1,4 @@
-.button__container {
+.button__container a {
   padding: 1rem 2rem;
   border-radius: 20px;
   color: black;
@@ -12,7 +12,7 @@
 }
 
 @media (hover: hover) {
-  .button__container:hover {
+  .button__container:hover a {
     color: white;
     background-color: black;
   }
