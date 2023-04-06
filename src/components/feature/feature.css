@@ -19,6 +19,9 @@
 .feature__banner img {
   opacity: 1;
   transition: all 0.2s ease;
+  object-fit: cover;
+  width: 150%;
+  transform: translateX(-40px);
 }
 
 .feature__banner-button {
