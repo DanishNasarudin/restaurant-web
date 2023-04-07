@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, forwardRef } from "react";
 import "./navbar.css";
 import { RiMenuLine, RiCloseLine } from "react-icons/ri";
 import logo from "../../assets/MatRock-logo.svg";
@@ -20,13 +20,12 @@ const Menu = () => {
   );
 };
 
-const Navbar = ({ toggleButton }: { toggleButton: boolean }) => {
-  const [toggleMenu, setToggleMenu] = useState(false);
+interface NavbarProps {
+  toggleButton: boolean;
+}
 
-  // const buttonRef = useRef<HTMLInputElement>(null);
-  // useEffect(() => {
-  //   console.log("buttonRef", buttonRef.current);
-  // });
+const Navbar = ({ toggleButton }: NavbarProps) => {
+  const [toggleMenu, setToggleMenu] = useState(false);
 
   return (
     <div className="restaurant__navbar">

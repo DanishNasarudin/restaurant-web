@@ -1,4 +1,3 @@
-// import React from "react"
 import "./App.css";
 
 import { useInView } from "react-intersection-observer";
@@ -10,7 +9,8 @@ function App() {
 
   return (
     <div className="App">
-      <div className="navbar__bg">
+      <div id="navbar-bg" className="navbar__bg">
+        {/* <Navbar ref={navbarRef} toggleButton={headerIsVisible} /> */}
         <Navbar toggleButton={headerIsVisible} />
       </div>
       <div className="App__container">

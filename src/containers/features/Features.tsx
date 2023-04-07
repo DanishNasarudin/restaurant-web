@@ -1,7 +1,6 @@
-import React from "react";
 import "./features.css";
 import { Feature } from "../../components";
-import { Beef, Chicken, Octopus, Shrimp, Supreme, Logo } from "../../assets";
+import { Beef, Chicken, Octopus, Shrimp, Supreme } from "../../assets";
 
 const Features = () => {
   return (
