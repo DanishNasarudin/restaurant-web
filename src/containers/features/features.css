@@ -21,3 +21,27 @@
   gap: var(--margin-16px-8px);
   flex-wrap: wrap;
 }
+
+.features__button-more {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: var(--margin-32px-16px) 0;
+}
+
+.features__button-more .button__container a {
+  background-color: white;
+  border-color: black;
+  border-width: 2px;
+  border-style: solid;
+}
+
+@media (hover: hover) {
+  .features__button-more .button__container a:hover {
+    color: var(--color-text);
+    background-color: var(--color-subtext);
+    border-color: transparent;
+    border-width: 2px;
+  }
+}

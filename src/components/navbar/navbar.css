@@ -61,6 +61,10 @@
   cursor: pointer;
 }
 
+.restaurant__navbar-links_container p a {
+  font-size: calc(var(--font-16px) - 2px);
+}
+
 @media (hover: hover) {
   .restaurant__navbar-links_logo img:hover {
     transform: scale(1.1);
@@ -120,6 +124,14 @@
   margin: 0 auto;
 }
 
+.restaurant__navbar-menu_button {
+  display: none;
+  position: absolute;
+  bottom: -100vh;
+  left: 50%;
+  transform: translate(-50%, -130%);
+}
+
 @media screen and (max-width: 784px) {
   .restaurant__navbar {
     padding: 1rem 2rem;
@@ -130,6 +142,9 @@
   }
 
   .restaurant__navbar-menu {
+    display: flex;
+  }
+  .restaurant__navbar-menu_button {
     display: flex;
   }
 }

@@ -1,5 +1,5 @@
 import "./features.css";
-import { Feature } from "../../components";
+import { Button, Feature } from "../../components";
 import { Beef, Chicken, Octopus, Shrimp, Supreme } from "../../assets";
 
 const Features = () => {
@@ -43,6 +43,9 @@ const Features = () => {
             desc="A perfect dining experience with a combination of turmeric fried chicken and a choice of turmeric fried meat / squid / shrimp, accompanied by fresh drinking water."
           />
         </div>
+      </div>
+      <div className="features__button-more">
+        <Button links={"#"} text={"More Menu"} />
       </div>
     </div>
   );

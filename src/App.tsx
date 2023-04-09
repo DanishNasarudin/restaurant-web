@@ -1,8 +1,11 @@
 import "./App.css";
 
 import { useInView } from "react-intersection-observer";
-import { Features, Footer, Header, Socials } from "./containers";
+import { Features, Footer, Header, Offers, Socials } from "./containers";
 import { Navbar } from "./components";
+import { Route, Routes } from "react-router-dom";
+import { Studio } from "sanity";
+import StudioPage from "./containers/studioPage/StudioPage";
 
 function App() {
   const { ref: buttonRef, inView: headerIsVisible } = useInView();
@@ -18,8 +21,10 @@ function App() {
           <Header />
         </div>
         <Features />
+        <Offers />
         <Socials />
         <Footer />
+        {/* <StudioPage /> */}
       </div>
     </div>
   );

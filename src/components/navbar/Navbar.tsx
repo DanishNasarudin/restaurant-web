@@ -70,6 +70,15 @@ const Navbar = ({ toggleButton }: NavbarProps) => {
           )}
         </div>
       </div>
+      <div className="restaurant__navbar-menu_button">
+        {toggleButton ? (
+          <a href="#" style={{ display: "none" }}>
+            Order Now
+          </a>
+        ) : (
+          <Button links="#onlineorder" text="Order Now" />
+        )}
+      </div>
     </div>
   );
 };
