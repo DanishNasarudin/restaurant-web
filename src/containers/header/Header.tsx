@@ -14,9 +14,7 @@ const Header = () => {
           Enjoy a spicy turmeric fried dish with chicken, meat, squid, or shrimp
           served with a special sambal.
         </p>
-        <p>
-          <Button links="#test" text="Order Now" />
-        </p>
+        <Button links="#test" text="Order Now" />
       </div>
       <div className="header__artwork">
         <img src={graphic} alt="graphic" />

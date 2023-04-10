@@ -1,5 +1,6 @@
 import { createClient } from "@sanity/client";
 import { useEffect, useState } from "react";
+import { Social } from "../../components";
 import "./socials.css";
 
 const client = createClient({
@@ -9,39 +10,67 @@ const client = createClient({
   useCdn: false,
 });
 
-interface Pet {
+interface New {
   _id: string;
-  _type: string;
-  name: string;
+  title: string;
+  slug: string;
+  thumbnail: string;
+  description: string;
+  content: string;
 }
 
 const Socials = () => {
-  const [pets, setPets] = useState<Pet[]>([]);
+  const [news, setNews] = useState<New[]>([]);
 
   useEffect(() => {
-    async function fetchPets() {
-      const petsData = await client.fetch<Pet[]>(`*[_type == "pet"]`);
-      setPets(petsData);
+    async function fetchNews() {
+      const newsData = await client.fetch<New[]>(`*[_type == "news"]`);
+      setNews(newsData);
+      console.log(newsData);
     }
 
-    fetchPets();
+    fetchNews();
   }, []);
 
-  console.log(pets);
-
   return (
-    <div className="socials__container">
+    <div className="socials__container" id="socials">
       <div className="socials__title">Socials</div>
       <div className="socials__posts-container">
-        {pets.map((pet) => (
+        {/* {news.map((pet) => (
           <div key={pet._id}>
             <div>ID: {pet._id}</div>
             <div>Type: {pet._type}</div>
             <div>Name: {pet.name}</div>
-            {/* Add any other properties you want to display */}
+            Add any other properties you want to display
           </div>
+        ))} */}
+        {news.map((post) => (
+          <Social
+            key={post._id}
+            title={post.title}
+            description={post.description}
+            thumb={post.thumbnail}
+            link={""}
+          />
         ))}
-        {pets.length}
+        {/* <Social
+          title={"Ramadan"}
+          description={"Happy Ramadan"}
+          thumb={"#"}
+          link={"https://www.google.com/"}
+        /> */}
+        {/* <Social
+          title={"Ramadan"}
+          description={"Happy Ramadan"}
+          thumb={"#"}
+          link={"https://www.google.com/"}
+        />
+        <Social
+          title={"Ramadan"}
+          description={"Happy Ramadan"}
+          thumb={"#"}
+          link={"https://www.google.com/"}
+        /> */}
       </div>
     </div>
   );

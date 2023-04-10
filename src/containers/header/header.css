@@ -19,7 +19,7 @@
 
 .header__texts p {
   display: flex;
-  margin: var(--margin-16px-8px) 0;
+  margin: var(--margin-16px-8px) 0 calc(var(--margin-16px-8px) * 2) 0;
 }
 
 .header__texts p:nth-child(3) {

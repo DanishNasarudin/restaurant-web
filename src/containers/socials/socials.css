@@ -1,0 +1,5 @@
+.socials__posts-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--margin-16px-8px);
+}

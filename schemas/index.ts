@@ -1,3 +1,3 @@
-import pet from "./pet";
+import News from "./News";
 
-export const schemaTypes = [pet];
+export const schemaTypes = [News];

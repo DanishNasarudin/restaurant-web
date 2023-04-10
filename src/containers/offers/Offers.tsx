@@ -3,7 +3,7 @@ import { RiTruckFill, RiShoppingBasketFill } from "react-icons/ri";
 
 const Offers = () => {
   return (
-    <div className="offers__container">
+    <div className="offers__container" id="offers">
       <div className="offers__card">
         <h2>
           <RiTruckFill />

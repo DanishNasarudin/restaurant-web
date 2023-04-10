@@ -1,21 +1,63 @@
-import React, { useState, useRef, useEffect, forwardRef } from "react";
+import { useState } from "react";
 import "./navbar.css";
 import { RiMenuLine, RiCloseLine } from "react-icons/ri";
 import logo from "../../assets/MatRock-logo.svg";
 import Button from "../button/Button";
+import { Link as LinkScroll } from "react-scroll";
 
 const Menu = () => {
   return (
     <>
-      <p>
-        <a href="#superhot">Super Hot</a>
-      </p>
-      <p>
-        <a href="#socials">Socials</a>
-      </p>
-      <p>
-        <a href="#contact">Contact</a>
-      </p>
+      <div className="links_container-style">
+        <LinkScroll
+          activeClass="activeNavLink"
+          to="hot"
+          spy={true}
+          smooth={true}
+          offset={-120}
+          duration={100}
+        >
+          Super Hot
+        </LinkScroll>
+        {/* <a href="#superhot">Super Hot</a> */}
+      </div>
+      <div className="links_container-style">
+        <LinkScroll
+          activeClass="activeNavLink"
+          to="offers"
+          spy={true}
+          smooth={true}
+          offset={-120}
+          duration={100}
+        >
+          Offers
+        </LinkScroll>
+        {/* <a href="#socials">Socials</a> */}
+      </div>
+      <div className="links_container-style">
+        <LinkScroll
+          activeClass="activeNavLink"
+          to="socials"
+          spy={true}
+          smooth={true}
+          offset={-120}
+          duration={100}
+        >
+          Socials
+        </LinkScroll>
+      </div>
+      <div className="links_container-style">
+        <LinkScroll
+          activeClass="activeNavLink"
+          to="contacts"
+          spy={true}
+          smooth={true}
+          offset={-120}
+          duration={100}
+        >
+          Contacts
+        </LinkScroll>
+      </div>
     </>
   );
 };
@@ -34,20 +76,16 @@ const Navbar = ({ toggleButton }: NavbarProps) => {
           <img src={logo} alt="logo" />
         </div>
         <div className="restaurant__navbar-links_container">
-          {/* <p>
-            <Button links="#onlineorder" text="Order Now" />
-          </p> */}
           <Menu />
-          <p>
+          <div className="links_container-style">
             {toggleButton ? (
               <a href="#ordernow">Order Now</a>
             ) : (
               <Button links="#onlineorder" text="Order Now" />
             )}
-          </p>
+          </div>
         </div>
         <div className="restaurant__navbar-menu">
-          {/* <Button links="#onlineorder" text="Online Order" /> */}
           {toggleMenu ? (
             <RiCloseLine
               color="#000000"

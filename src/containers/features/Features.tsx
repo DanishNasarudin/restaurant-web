@@ -4,7 +4,7 @@ import { Beef, Chicken, Octopus, Shrimp, Supreme } from "../../assets";
 
 const Features = () => {
   return (
-    <div className="features__container">
+    <div className="features__container" id="hot">
       <div className="features__title">
         <h2>Super Hot</h2>
       </div>
