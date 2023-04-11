@@ -37,14 +37,14 @@ export const News: SchemaTypeDefinition = {
       name: "description",
       type: "text",
       validation: (rule: Rule) => [
-        rule.required().max(200).warning("Description too long."),
+        rule.required().max(150).warning("Description too long."),
       ],
     },
     {
       title: "Content",
       name: "content",
       type: "array",
-      of: [{ type: "block" }],
+      of: [{ type: "block" }, { type: "image", options: { hotspot: true } }],
       validation: (rule: Rule) => [rule.required()],
     },
   ],

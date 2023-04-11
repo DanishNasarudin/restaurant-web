@@ -5,7 +5,7 @@
 
 .features__title {
   font-family: var(--font-family);
-  margin: var(--margin-32px-16px);
+  margin-bottom: var(--margin-64px-32px);
   text-align: center;
 }
 

@@ -1,0 +1,48 @@
+.post__container {
+  width: 100%;
+
+  font-family: var(--font-family);
+}
+
+.post__navbar {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.post__body {
+  max-width: 784px;
+  width: 100%;
+  margin: var(--margin-64px-32px) auto;
+  padding: 0 var(--margin-32px-16px);
+}
+
+.post__header {
+  margin-bottom: var(--margin-64px-32px);
+}
+
+.post__header h1 {
+  font-size: var(--font-32px);
+}
+
+.post__date {
+  font-size: calc(var(--font-16px) - 4px);
+  margin: 0.5rem 0;
+  color: rgba(150, 150, 150, 1);
+}
+
+.post__normal-text {
+  margin: var(--margin-16px-8px) 0;
+  font-size: calc(var(--font-16px) - 2px);
+}
+
+.post__image-container {
+  display: flex;
+  justify-content: center;
+}
+
+.post__images {
+  width: 50%;
+  margin: 0 auto;
+}
