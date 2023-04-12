@@ -48,7 +48,7 @@ const Socials = () => {
             key={post._id}
             title={post.title}
             description={post.description}
-            thumb={imgURL(post.thumbnail).width(200).url()}
+            thumb={imgURL(post.thumbnail).width(500).auto("format").url()}
             link={post.slug.current}
             postContent={post.content}
             date={new Date(post._updatedAt)}

@@ -53,6 +53,10 @@
 
 @media screen and (max-width: 411px) {
   .feature__container {
-    max-width: 200px;
+    max-width: 150px;
+  }
+
+  .feature__texts p {
+    font-size: calc(var(--font-16px) - 4px);
   }
 }

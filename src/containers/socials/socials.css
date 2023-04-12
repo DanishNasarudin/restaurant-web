@@ -15,3 +15,9 @@
   text-align: center;
   margin-bottom: var(--margin-64px-32px);
 }
+
+@media screen and (max-width: 411px) {
+  .socials__posts-container {
+    gap: var(--margin-32px-16px);
+  }
+}

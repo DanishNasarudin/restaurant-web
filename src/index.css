@@ -3,6 +3,8 @@
 :root {
   --font-family: "Inter", sans-serif;
 
+  font-family: var(--font-family);
+
   --color-bg: #fff;
   --color-footer: #e0e0e0;
   --color-text: #000000;

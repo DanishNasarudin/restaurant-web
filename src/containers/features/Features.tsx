@@ -28,8 +28,6 @@ const Features = () => {
             title="OCTOPUS SET"
             desc="Enjoy the tender turmeric fried octopus, accompanied by white rice, tempting sambal, sweet soy sauce, and refreshing drinking water."
           />
-        </div>
-        <div className="features__rows row2">
           <Feature
             bannerImg={Shrimp}
             bannerAlt="Shrimp Set"
