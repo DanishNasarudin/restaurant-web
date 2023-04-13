@@ -1,4 +1,3 @@
-import React from "react";
 import "./header.css";
 import graphic from "../../assets/hero-graphic.png";
 import { Button } from "../../components";

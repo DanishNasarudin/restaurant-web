@@ -1,4 +1,3 @@
-import React from "react";
 import "./feature.css";
 import Button from "../button/Button";
 

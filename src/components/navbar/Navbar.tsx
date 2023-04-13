@@ -3,15 +3,50 @@ import "./navbar.css";
 import { RiMenuLine, RiCloseLine } from "react-icons/ri";
 import logo from "../../assets/MatRock-logo.svg";
 import Button from "../button/Button";
-import { Link as LinkScroll } from "react-scroll";
-import { Link } from "react-router-dom";
+import { scroller } from "react-scroll";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useBasePath } from "../utils/useBasePath";
 
 interface ClickProps {
   handleClick: (message: boolean) => void;
+  BooleanArray: {
+    toggleButton: boolean;
+    features: boolean;
+    offers: boolean;
+    socials: boolean;
+    contacts: boolean;
+  };
 }
 
-const Menu: React.FC<ClickProps> = ({ handleClick }) => {
+const Menu = ({ handleClick, BooleanArray }: ClickProps) => {
+  const { features, offers, socials, contacts } = BooleanArray;
+  const basePath = useBasePath();
+  const currentPath = useLocation().pathname;
+  const navigate = useNavigate();
   const [click, setClick] = useState(false);
+
+  const ScrollToID = (id: string) => {
+    navigate(basePath);
+    if (currentPath === "/" || currentPath === "/preview") {
+      scroller.scrollTo(id, {
+        duration: 100,
+        delay: 0,
+        smooth: true,
+        offset: -120,
+      });
+      toggleClick();
+    } else {
+      setTimeout(() => {
+        scroller.scrollTo(id, {
+          duration: 100,
+          delay: 0,
+          smooth: true,
+          offset: -120,
+        });
+        toggleClick();
+      }, 100);
+    }
+  };
 
   const toggleClick = () => {
     if (click) {
@@ -25,69 +60,87 @@ const Menu: React.FC<ClickProps> = ({ handleClick }) => {
 
   return (
     <>
-      <div className="links_container-style">
-        <LinkScroll
-          activeClass="activeNavLink"
-          to="hot"
-          spy={true}
-          smooth={true}
-          offset={-120}
-          duration={100}
-          onClick={toggleClick}
+      <div
+        className={
+          features
+            ? "links_container-style activeNavLink"
+            : "links_container-style"
+        }
+      >
+        <Link
+          to={basePath}
+          onClick={() => {
+            ScrollToID("hot");
+          }}
         >
           Super Hot
-        </LinkScroll>
-        {/* <a href="#superhot">Super Hot</a> */}
+        </Link>
       </div>
-      <div className="links_container-style">
-        <LinkScroll
-          activeClass="activeNavLink"
-          to="offers"
-          spy={true}
-          smooth={true}
-          offset={-120}
-          duration={100}
-          onClick={toggleClick}
+      <div
+        className={
+          offers
+            ? "links_container-style activeNavLink"
+            : "links_container-style"
+        }
+      >
+        <Link
+          to={basePath}
+          onClick={() => {
+            ScrollToID("offers");
+          }}
         >
           Offers
-        </LinkScroll>
-        {/* <a href="#socials">Socials</a> */}
+        </Link>
       </div>
-      <div className="links_container-style">
-        <LinkScroll
-          activeClass="activeNavLink"
-          to="socials"
-          spy={true}
-          smooth={true}
-          offset={-120}
-          duration={100}
-          onClick={toggleClick}
+      <div
+        className={
+          socials
+            ? "links_container-style activeNavLink"
+            : "links_container-style"
+        }
+      >
+        <Link
+          to={basePath}
+          onClick={() => {
+            ScrollToID("socials");
+          }}
         >
           Socials
-        </LinkScroll>
+        </Link>
       </div>
-      <div className="links_container-style">
-        <LinkScroll
-          activeClass="activeNavLink"
-          to="contacts"
-          spy={true}
-          smooth={true}
-          offset={-120}
-          duration={100}
-          onClick={toggleClick}
+      <div
+        className={
+          contacts
+            ? "links_container-style activeNavLink"
+            : "links_container-style"
+        }
+      >
+        <Link
+          to={basePath}
+          onClick={() => {
+            ScrollToID("contacts");
+          }}
         >
           Contacts
-        </LinkScroll>
+        </Link>
       </div>
     </>
   );
 };
 
 interface NavbarProps {
-  toggleButton: boolean;
+  BooleanArray: {
+    toggleButton: boolean;
+    features: boolean;
+    offers: boolean;
+    socials: boolean;
+    contacts: boolean;
+  };
 }
 
-const Navbar = ({ toggleButton }: NavbarProps) => {
+const Navbar = ({ BooleanArray }: NavbarProps) => {
+  const { toggleButton } = BooleanArray;
+  const basePath = useBasePath();
   const [toggleMenu, setToggleMenu] = useState(false);
 
   const handleClick = (message: boolean) => {
@@ -98,12 +151,12 @@ const Navbar = ({ toggleButton }: NavbarProps) => {
     <div className="restaurant__navbar">
       <div className="restaurant__navbar-links">
         <div className="restaurant__navbar-links_logo">
-          <Link to={"/"}>
+          <Link to={basePath}>
             <img src={logo} alt="logo" />
           </Link>
         </div>
         <div className="restaurant__navbar-links_container">
-          <Menu handleClick={handleClick} />
+          <Menu handleClick={handleClick} BooleanArray={BooleanArray} />
           <div className="links_container-style">
             {toggleButton ? (
               <a href="#ordernow">Order Now</a>
@@ -129,7 +182,7 @@ const Navbar = ({ toggleButton }: NavbarProps) => {
           {toggleMenu && (
             <div className="restaurant__navbar-menu_container">
               <div className="restaurant__navbar-menu_container-links">
-                <Menu handleClick={handleClick} />
+                <Menu handleClick={handleClick} BooleanArray={BooleanArray} />
               </div>
             </div>
           )}

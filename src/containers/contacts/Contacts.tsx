@@ -1,8 +1,9 @@
+import { forwardRef } from "react";
 import { Form, Location } from "../../components";
 
 import "./contacts.css";
 
-const Contacts = () => {
+const Contacts = forwardRef<HTMLDivElement, {}>((_, ref) => {
   return (
     <div className="contacts__container" id="contacts">
       <div className="contacts__texts">
@@ -19,6 +20,6 @@ const Contacts = () => {
       </div>
     </div>
   );
-};
+});
 
 export default Contacts;

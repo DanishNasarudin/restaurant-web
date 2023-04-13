@@ -1,7 +1,8 @@
 import "./offers.css";
 import { RiTruckFill, RiShoppingBasketFill } from "react-icons/ri";
+import { forwardRef } from "react";
 
-const Offers = () => {
+const Offers = forwardRef<HTMLDivElement, {}>((_, ref) => {
   return (
     <div className="offers__container" id="offers">
       <div className="offers__title">
@@ -33,6 +34,6 @@ const Offers = () => {
       </div>
     </div>
   );
-};
+});
 
 export default Offers;

@@ -57,7 +57,9 @@
   text-transform: capitalize;
   white-space: nowrap;
 
-  margin: 0 1rem;
+  text-shadow: -0.25px -0.25px 0 transparent, 0.25px 0.25px transparent;
+
+  padding: 0 1rem;
   cursor: pointer;
 }
 
@@ -68,6 +70,9 @@
   .restaurant__navbar-links_container .links_container-style:hover,
   .restaurant__navbar-menu_container .links_container-style:hover {
     color: var(--color-subtext);
+    text-shadow: -0.25px -0.25px 0 var(--color-subtext),
+      0.25px 0.25px var(--color-subtext);
+    /* font-weight: 700; */
   }
 }
 
@@ -145,7 +150,9 @@
   }
 }
 
-.activeNavLink {
+.links_container-style.activeNavLink {
   color: var(--color-subtext);
-  font-weight: 700;
+  text-shadow: -0.25px -0.25px 0 var(--color-subtext),
+    0.25px 0.25px var(--color-subtext);
+  /* font-weight: 700; */
 }

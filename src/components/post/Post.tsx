@@ -1,14 +1,17 @@
-import { useLocation, useParams } from "react-router-dom";
+import { Navigate, useLocation } from "react-router-dom";
 import { PortableText, PortableTextComponents } from "@portabletext/react";
 import Navbar from "../navbar/Navbar";
 import "./post.css";
 import imageURL from "@sanity/image-url";
 import { getImageDimensions } from "@sanity/asset-utils";
-import { useEffect } from "react";
 
 function Post() {
   const { description, title, date } = useLocation().state ?? {};
-  console.log(date);
+  // console.log(date);
+
+  if (description === undefined || title === undefined || date === undefined) {
+    return <Navigate replace to="/" />;
+  }
 
   const dateOptions = {
     weekday: "long",
@@ -17,10 +20,18 @@ function Post() {
     day: "numeric",
   };
 
+  let BooleanArray = {
+    toggleButton: true,
+    features: false,
+    offers: false,
+    socials: false,
+    contacts: false,
+  };
+
   return (
     <div className="post__container">
       <div className="post__navbar">
-        <Navbar toggleButton={true} />
+        <Navbar BooleanArray={BooleanArray} />
       </div>
       <div className="post__body">
         <div className="post__header">

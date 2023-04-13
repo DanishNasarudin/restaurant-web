@@ -1,8 +1,9 @@
 import "./features.css";
 import { Button, Feature } from "../../components";
 import { Beef, Chicken, Octopus, Shrimp, Supreme } from "../../assets";
+import { forwardRef } from "react";
 
-const Features = () => {
+const Features = forwardRef<HTMLDivElement, {}>((_, ref) => {
   return (
     <div className="features__container" id="hot">
       <div className="features__title">
@@ -47,6 +48,6 @@ const Features = () => {
       </div>
     </div>
   );
-};
+});
 
 export default Features;
