@@ -4,13 +4,14 @@ import Navbar from "../navbar/Navbar";
 import "./post.css";
 import imageURL from "@sanity/image-url";
 import { getImageDimensions } from "@sanity/asset-utils";
+import { useBasePath } from "..";
 
 function Post() {
   const { description, title, date } = useLocation().state ?? {};
   // console.log(date);
 
   if (description === undefined || title === undefined || date === undefined) {
-    return <Navigate replace to="/" />;
+    return <Navigate replace to={useBasePath()} />;
   }
 
   const dateOptions = {

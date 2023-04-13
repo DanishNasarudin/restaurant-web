@@ -1,9 +1,7 @@
 import { createClient } from "@sanity/client";
-import { forwardRef, useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
-import { Social } from "../../components";
+import { useEffect, useState } from "react";
+import { Social, useBasePath, usePreview } from "../../components";
 import { News } from "../../components/types/sanity";
-import usePreview from "../../components/utils/sanity.preview";
 import { imgURL } from "../../components/utils/sanityImage";
 import "./socials.css";
 
@@ -11,12 +9,12 @@ const client = createClient({
   projectId: import.meta.env.VITE_PUBLIC_SANITY_PROJECT_ID,
   dataset: import.meta.env.VITE_PUBLIC_SANITY_DATASET,
   apiVersion: import.meta.env.VITE_PUBLIC_SANITY_API_VERSION,
-  useCdn: false,
+  useCdn: import.meta.env.VITE_PUBLIC_SANITY_CDN,
 });
 
-const Socials = forwardRef<HTMLDivElement, {}>((_, ref) => {
+const Socials = () => {
   const [news, setNews] = useState<News[]>([]);
-  const pageURL = useLocation();
+  const basePath = useBasePath();
   const previewPage = usePreview(
     null,
     `*[_type == "news"] | order(_createdAt desc)`
@@ -25,7 +23,7 @@ const Socials = forwardRef<HTMLDivElement, {}>((_, ref) => {
   useEffect(() => {
     async function fetchNews() {
       let newsData;
-      if (pageURL.pathname === "/preview") {
+      if (basePath === "/preview") {
         newsData = previewPage;
         // console.log("Preview");
       } else {
@@ -62,6 +60,6 @@ const Socials = forwardRef<HTMLDivElement, {}>((_, ref) => {
       </div>
     </div>
   );
-});
+};
 
 export default Socials;

@@ -1,4 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
+import { useBasePath } from "..";
 import { Content } from "../types/sanity";
 import "./social.css";
 
@@ -19,16 +20,12 @@ const Social = ({
   postContent,
   date,
 }: Props) => {
-  const currentPageURL = useLocation();
-  const pageURL = currentPageURL.pathname.startsWith("/preview")
-    ? "/preview"
-    : "";
-  // let postLink;
-  // if (pageURL === "/preview") {
-  //   postLink = `/preview/post/${link}`;
-  // } else {
-  //   postLink = `/post/${link}`;
-  // }
+  // const currentPageURL = useLocation();
+  let basePath = useBasePath();
+  if (basePath === "/") {
+    basePath = "";
+  }
+
   return (
     <div className="social__container">
       <div className="social__container-left">
@@ -38,7 +35,7 @@ const Social = ({
         </div>
         <Link
           className="social__link"
-          to={`${pageURL}/post/${link}`}
+          to={`${basePath}/post/${link}`}
           state={{ description: postContent, title: title, date: date }}
           replace
         >

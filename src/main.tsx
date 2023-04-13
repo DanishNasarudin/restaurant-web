@@ -12,11 +12,8 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<App />} />
-        <Route path="/preview/*" element={<App />}></Route>
-        <Route path="/studioPage" element={<StudioPage />}>
-          <Route path="desk" element={<StudioPage />} />
-          <Route path="desk/*" element={<StudioPage />} />
-        </Route>
+        <Route path="/preview/*" element={<App />} />
+        <Route path="/studioPage/*" element={<StudioPage />} />
         <Route path="/post/:postId" element={<Post />} />
         <Route path="/preview/post/:postId" element={<Post />} />
         <Route path="*" element={<Notfound />} />

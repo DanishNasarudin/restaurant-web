@@ -19,7 +19,7 @@
 }
 
 @media (hover: hover) {
-  .button__container:hover a {
+  .button__container a:hover {
     color: white;
     background-color: black;
   }

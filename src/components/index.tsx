@@ -7,4 +7,6 @@ export { default as Button } from "./button/Button";
 export { default as Post } from "./post/Post";
 export { default as Notfound } from "./notfound/Notfound";
 export { default as ScrollToTop } from "./utils/ScrollToTop";
-// export { default as usePreview } from "./utils/sanity.preview";
+export { default as MenuLinkToId } from "./utils/MenuLinkToId";
+export { default as usePreview } from "./utils/sanity.preview";
+export { default as useBasePath } from "./utils/useBasePath";

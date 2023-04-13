@@ -3,9 +3,8 @@ import "./navbar.css";
 import { RiMenuLine, RiCloseLine } from "react-icons/ri";
 import logo from "../../assets/MatRock-logo.svg";
 import Button from "../button/Button";
-import { scroller } from "react-scroll";
-import { Link, useLocation, useNavigate } from "react-router-dom";
-import { useBasePath } from "../utils/useBasePath";
+import { Link } from "react-router-dom";
+import { MenuLinkToId, useBasePath } from "..";
 
 interface ClickProps {
   handleClick: (message: boolean) => void;
@@ -20,110 +19,40 @@ interface ClickProps {
 
 const Menu = ({ handleClick, BooleanArray }: ClickProps) => {
   const { features, offers, socials, contacts } = BooleanArray;
-  const basePath = useBasePath();
-  const currentPath = useLocation().pathname;
-  const navigate = useNavigate();
+
   const [click, setClick] = useState(false);
-
-  const ScrollToID = (id: string) => {
-    navigate(basePath);
-    if (currentPath === "/" || currentPath === "/preview") {
-      scroller.scrollTo(id, {
-        duration: 100,
-        delay: 0,
-        smooth: true,
-        offset: -120,
-      });
-      toggleClick();
-    } else {
-      setTimeout(() => {
-        scroller.scrollTo(id, {
-          duration: 100,
-          delay: 0,
-          smooth: true,
-          offset: -120,
-        });
-        toggleClick();
-      }, 100);
-    }
-  };
-
+  // This function is for closing the mobile navbar dropdown when a link is clicked.
   const toggleClick = () => {
-    if (click) {
-      setClick(false);
-    } else {
-      setClick(true);
-    }
-
+    !setClick;
     handleClick(click);
   };
 
   return (
     <>
-      <div
-        className={
-          features
-            ? "links_container-style activeNavLink"
-            : "links_container-style"
-        }
-      >
-        <Link
-          to={basePath}
-          onClick={() => {
-            ScrollToID("hot");
-          }}
-        >
-          Super Hot
-        </Link>
-      </div>
-      <div
-        className={
-          offers
-            ? "links_container-style activeNavLink"
-            : "links_container-style"
-        }
-      >
-        <Link
-          to={basePath}
-          onClick={() => {
-            ScrollToID("offers");
-          }}
-        >
-          Offers
-        </Link>
-      </div>
-      <div
-        className={
-          socials
-            ? "links_container-style activeNavLink"
-            : "links_container-style"
-        }
-      >
-        <Link
-          to={basePath}
-          onClick={() => {
-            ScrollToID("socials");
-          }}
-        >
-          Socials
-        </Link>
-      </div>
-      <div
-        className={
-          contacts
-            ? "links_container-style activeNavLink"
-            : "links_container-style"
-        }
-      >
-        <Link
-          to={basePath}
-          onClick={() => {
-            ScrollToID("contacts");
-          }}
-        >
-          Contacts
-        </Link>
-      </div>
+      <MenuLinkToId
+        id_inView={features}
+        id_name={"hot"}
+        link_name={"Super Hot"}
+        onClick={toggleClick}
+      />
+      <MenuLinkToId
+        id_inView={offers}
+        id_name={"offers"}
+        link_name={"Offers"}
+        onClick={toggleClick}
+      />
+      <MenuLinkToId
+        id_inView={socials}
+        id_name={"socials"}
+        link_name={"Socials"}
+        onClick={toggleClick}
+      />
+      <MenuLinkToId
+        id_inView={contacts}
+        id_name={"contacts"}
+        link_name={"Contacts"}
+        onClick={toggleClick}
+      />
     </>
   );
 };

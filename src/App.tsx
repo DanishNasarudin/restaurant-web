@@ -28,8 +28,8 @@ function App() {
   });
 
   let BooleanArray = {
-    toggleButton: headerIsVisible && !featuresIsVisible ? true : false,
-    features: featuresIsVisible && !headerIsVisible ? true : false,
+    toggleButton: headerIsVisible,
+    features: featuresIsVisible,
     offers: offersIsVisible,
     socials: socialsIsVisible,
     contacts: contactsIsVisible,

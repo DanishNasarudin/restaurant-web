@@ -72,7 +72,6 @@
     color: var(--color-subtext);
     text-shadow: -0.25px -0.25px 0 var(--color-subtext),
       0.25px 0.25px var(--color-subtext);
-    /* font-weight: 700; */
   }
 }
 
@@ -154,5 +153,4 @@
   color: var(--color-subtext);
   text-shadow: -0.25px -0.25px 0 var(--color-subtext),
     0.25px 0.25px var(--color-subtext);
-  /* font-weight: 700; */
 }
