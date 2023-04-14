@@ -6,57 +6,6 @@ import Button from "../button/Button";
 import { Link } from "react-router-dom";
 import { MenuLinkToId, useBasePath } from "..";
 
-interface ClickProps {
-  handleClick: (message: boolean) => void;
-  BooleanArray: {
-    toggleButton: boolean;
-    features: boolean;
-    offers: boolean;
-    socials: boolean;
-    contacts: boolean;
-  };
-}
-
-const Menu = ({ handleClick, BooleanArray }: ClickProps) => {
-  const { features, offers, socials, contacts } = BooleanArray;
-
-  const [click, setClick] = useState(false);
-  // This function is for closing the mobile navbar dropdown when a link is clicked.
-  const toggleClick = () => {
-    !setClick;
-    handleClick(click);
-  };
-
-  return (
-    <>
-      <MenuLinkToId
-        id_inView={features}
-        id_name={"hot"}
-        link_name={"Super Hot"}
-        onClick={toggleClick}
-      />
-      <MenuLinkToId
-        id_inView={offers}
-        id_name={"offers"}
-        link_name={"Offers"}
-        onClick={toggleClick}
-      />
-      <MenuLinkToId
-        id_inView={socials}
-        id_name={"socials"}
-        link_name={"Socials"}
-        onClick={toggleClick}
-      />
-      <MenuLinkToId
-        id_inView={contacts}
-        id_name={"contacts"}
-        link_name={"Contacts"}
-        onClick={toggleClick}
-      />
-    </>
-  );
-};
-
 interface NavbarProps {
   BooleanArray: {
     toggleButton: boolean;
@@ -131,3 +80,54 @@ const Navbar = ({ BooleanArray }: NavbarProps) => {
 };
 
 export default Navbar;
+
+interface ClickProps {
+  handleClick: (message: boolean) => void;
+  BooleanArray: {
+    toggleButton: boolean;
+    features: boolean;
+    offers: boolean;
+    socials: boolean;
+    contacts: boolean;
+  };
+}
+
+const Menu = ({ handleClick, BooleanArray }: ClickProps) => {
+  const { features, offers, socials, contacts } = BooleanArray;
+
+  const [click, setClick] = useState(false);
+  // This function is for closing the mobile navbar dropdown when a link is clicked.
+  const toggleClick = () => {
+    !setClick;
+    handleClick(click);
+  };
+
+  return (
+    <>
+      <MenuLinkToId
+        id_inView={features}
+        id_name={"hot"}
+        link_name={"Super Hot"}
+        onClick={toggleClick}
+      />
+      <MenuLinkToId
+        id_inView={offers}
+        id_name={"offers"}
+        link_name={"Offers"}
+        onClick={toggleClick}
+      />
+      <MenuLinkToId
+        id_inView={socials}
+        id_name={"socials"}
+        link_name={"Socials"}
+        onClick={toggleClick}
+      />
+      <MenuLinkToId
+        id_inView={contacts}
+        id_name={"contacts"}
+        link_name={"Contacts"}
+        onClick={toggleClick}
+      />
+    </>
+  );
+};

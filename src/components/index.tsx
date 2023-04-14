@@ -9,4 +9,6 @@ export { default as Notfound } from "./notfound/Notfound";
 export { default as ScrollToTop } from "./utils/ScrollToTop";
 export { default as MenuLinkToId } from "./utils/MenuLinkToId";
 export { default as usePreview } from "./utils/sanity.preview";
+export { default as getDefaultDocumentNode } from "./utils/sanity.structure";
 export { default as useBasePath } from "./utils/useBasePath";
+export { default as fetchSanityData } from "./utils/fetchSanityData";

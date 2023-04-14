@@ -1,44 +1,9 @@
-import { createClient } from "@sanity/client";
-import { useEffect, useState } from "react";
-import { Social, useBasePath, usePreview } from "../../components";
-import { News } from "../../components/types/sanity";
+import { fetchSanityData, Social } from "../../components";
 import { imgURL } from "../../components/utils/sanityImage";
 import "./socials.css";
 
-const client = createClient({
-  projectId: import.meta.env.VITE_PUBLIC_SANITY_PROJECT_ID,
-  dataset: import.meta.env.VITE_PUBLIC_SANITY_DATASET,
-  apiVersion: import.meta.env.VITE_PUBLIC_SANITY_API_VERSION,
-  useCdn: import.meta.env.VITE_PUBLIC_SANITY_CDN,
-});
-
 const Socials = () => {
-  const [news, setNews] = useState<News[]>([]);
-  const basePath = useBasePath();
-  const previewPage = usePreview(
-    null,
-    `*[_type == "news"] | order(_createdAt desc)`
-  );
-
-  useEffect(() => {
-    async function fetchNews() {
-      let newsData;
-      if (basePath === "/preview") {
-        newsData = previewPage;
-        // console.log("Preview");
-      } else {
-        newsData = await client.fetch<News[]>(
-          `*[_type == "news"] | order(_createdAt desc)`
-        );
-        // console.log("Not Preview");
-      }
-      setNews(newsData);
-      // console.log(imgURL(newsData[0].thumbnail).width(200).url());
-      // console.log(newsData);
-    }
-
-    fetchNews();
-  }, []);
+  const news = fetchSanityData();
 
   return (
     <div className="socials__container" id="socials">

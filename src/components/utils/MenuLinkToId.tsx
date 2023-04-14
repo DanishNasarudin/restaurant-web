@@ -28,7 +28,7 @@ const MenuLinkToId = ({
         smooth: true,
         offset: -120,
       });
-      onClick;
+      onClick();
     } else {
       setTimeout(() => {
         scroller.scrollTo(id, {
@@ -37,7 +37,7 @@ const MenuLinkToId = ({
           smooth: true,
           offset: -120,
         });
-        onClick;
+        onClick();
       }, 100);
     }
   };

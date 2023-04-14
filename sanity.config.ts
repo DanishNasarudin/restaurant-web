@@ -3,6 +3,7 @@ import { visionTool } from "@sanity/vision";
 import { deskTool } from "sanity/desk";
 import { schemaTypes } from "./schemas";
 import { getStartedPlugin } from "./plugins/sanity-plugin-tutorial";
+import { getDefaultDocumentNode } from "./src/components";
 
 const devOnlyPlugins = [getStartedPlugin()];
 
@@ -17,7 +18,13 @@ export default defineConfig({
   projectId,
   dataset,
 
-  plugins: [deskTool(), visionTool(), ...(isDev ? devOnlyPlugins : [])],
+  plugins: [
+    deskTool({
+      defaultDocumentNode: getDefaultDocumentNode,
+    }),
+    visionTool(),
+    ...(isDev ? devOnlyPlugins : []),
+  ],
 
   schema: {
     types: schemaTypes,
