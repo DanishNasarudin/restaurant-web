@@ -65,7 +65,7 @@ const Form = () => {
     <div className="form__container">
       <div className="form__body">
         <form onSubmit={handleSubmit}>
-          <div>
+          <div className="form__field-container">
             <label>Name</label>
             <input
               type="text"
@@ -76,7 +76,7 @@ const Form = () => {
               value={formValue.name}
             />
           </div>
-          <div>
+          <div className="form__field-container">
             <label>Email</label>
             <input
               type="text"
@@ -88,7 +88,7 @@ const Form = () => {
               value={formValue.email}
             />
           </div>
-          <div>
+          <div className="form__field-container">
             <label>Message</label>
             <textarea
               required

@@ -5,8 +5,10 @@
   scroll-behavior: smooth;
 }
 
-body {
+body,
+html {
   background: var(--color-bg);
+  width: 100%;
 }
 
 a {
