@@ -1,5 +1,5 @@
 import { forwardRef } from "react";
-import { Form, Location } from "../../components";
+import { Form, Locations } from "../../components";
 
 import "./contacts.css";
 
@@ -16,7 +16,7 @@ const Contacts = forwardRef<HTMLDivElement, {}>((_, ref) => {
       </div>
       <div className="contacts__body">
         <Form />
-        <Location />
+        <Locations />
       </div>
     </div>
   );

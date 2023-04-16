@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { fetchSanityData, Social } from "../../components";
 import { imgURL } from "../../components/utils/sanityImage";
 import "./socials.css";

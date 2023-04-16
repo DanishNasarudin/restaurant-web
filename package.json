@@ -16,6 +16,7 @@
     "@sanity/preview-kit": "^1.4.0",
     "@sanity/ui": "^1.2.0",
     "@sanity/vision": "^3.0.0",
+    "framer-motion": "^10.12.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.8.0",

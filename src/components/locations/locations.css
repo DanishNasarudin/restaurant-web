@@ -1,0 +1,9 @@
+.locations__container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: var(--margin-32px-16px) 0;
+
+  flex-wrap: wrap;
+  gap: 16px;
+}

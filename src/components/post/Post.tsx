@@ -5,6 +5,8 @@ import "./post.css";
 import imageURL from "@sanity/image-url";
 import { getImageDimensions } from "@sanity/asset-utils";
 import { useBasePath } from "..";
+import { Footer } from "../../containers";
+import { motion as m } from "framer-motion";
 
 function Post() {
   const { description, title, date } = useLocation().state ?? {};
@@ -34,7 +36,12 @@ function Post() {
       <div className="post__navbar">
         <Navbar BooleanArray={BooleanArray} />
       </div>
-      <div className="post__body">
+      <m.div
+        className="post__body"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+      >
         <div className="post__header">
           <h1>{title}</h1>
           <p className="post__date">
@@ -42,6 +49,9 @@ function Post() {
           </p>
         </div>
         <PortableText value={[...description]} components={components} />
+      </m.div>
+      <div className="post__footer">
+        <Footer />
       </div>
     </div>
   );

@@ -9,6 +9,7 @@ import {
   Socials,
 } from "./containers";
 import { Navbar } from "./components";
+import { motion as m } from "framer-motion";
 
 function App() {
   const { ref: buttonRef, inView: headerIsVisible } = useInView({
@@ -42,7 +43,12 @@ function App() {
       <div id="navbar-bg" className="navbar__bg">
         <Navbar BooleanArray={BooleanArray} />
       </div>
-      <div className="App__container">
+      <m.div
+        className="App__container"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+      >
         <div ref={buttonRef} className="App__header">
           <Header />
         </div>
@@ -58,6 +64,8 @@ function App() {
         <div ref={contactsRef}>
           <Contacts />
         </div>
+      </m.div>
+      <div className="footer__bg">
         <Footer />
       </div>
     </div>

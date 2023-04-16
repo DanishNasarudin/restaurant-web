@@ -43,9 +43,6 @@ const Features = forwardRef<HTMLDivElement, {}>((_, ref) => {
           />
         </div>
       </div>
-      <div className="features__button-more">
-        <Button links={"#"} text={"More Menu"} />
-      </div>
     </div>
   );
 });

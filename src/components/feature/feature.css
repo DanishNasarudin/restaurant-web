@@ -57,6 +57,6 @@
   }
 
   .feature__texts p {
-    font-size: calc(var(--font-16px) - 4px);
+    font-size: calc(var(--font-16px) - 3px);
   }
 }

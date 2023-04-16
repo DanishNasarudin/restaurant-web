@@ -3,7 +3,7 @@ import { visionTool } from "@sanity/vision";
 import { deskTool } from "sanity/desk";
 import { schemaTypes } from "./schemas";
 import { getStartedPlugin } from "./plugins/sanity-plugin-tutorial";
-import { getDefaultDocumentNode } from "./src/components";
+import getDefaultDocumentNode from "./src/components/utils/sanity.structure";
 
 const devOnlyPlugins = [getStartedPlugin()];
 
