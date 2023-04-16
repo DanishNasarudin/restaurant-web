@@ -1,0 +1,12 @@
+.studio__topNav {
+  background-color: rgba(16, 17, 18, 1);
+  padding: 1rem 1rem;
+}
+
+.studio__texts {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba(209, 213, 220, 1);
+}

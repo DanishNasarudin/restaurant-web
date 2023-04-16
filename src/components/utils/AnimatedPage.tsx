@@ -6,22 +6,25 @@ import {
   Routes,
   useLocation,
 } from "react-router-dom";
-import { StudioPage } from "../../containers";
-import { Notfound, Post, ScrollToTop } from "../../components";
+import { Studio } from "../../containers";
+import { Loading, Notfound, Post, ScrollToTop } from "../../components";
 import { AnimatePresence, motion } from "framer-motion";
+import { Suspense } from "react";
 
 const AnimatedPage = () => {
   const location = useLocation();
   return (
     <AnimatePresence>
-      <Routes location={location} key={location.pathname}>
-        <Route path="/" element={<App />} />
-        <Route path="/preview/*" element={<App />} />
-        <Route path="/studioPage/*" element={<StudioPage />} />
-        <Route path="/post/:postId" element={<Post />} />
-        <Route path="/preview/post/:postId" element={<Post />} />
-        <Route path="*" element={<Notfound />} />
-      </Routes>
+      <Suspense fallback={<Loading />}>
+        <Routes location={location} key={location.pathname}>
+          <Route path="/" element={<App />} />
+          <Route path="/preview/*" element={<App />} />
+          <Route path="/studio/*" element={<Studio />} />
+          <Route path="/post/:postId" element={<Post />} />
+          <Route path="/preview/post/:postId" element={<Post />} />
+          <Route path="*" element={<Notfound />} />
+        </Routes>
+      </Suspense>
     </AnimatePresence>
   );
 };

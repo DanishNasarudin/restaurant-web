@@ -12,7 +12,9 @@ const getDefaultDocumentNode: DefaultDocumentNodeResolver = (
       S.view
         .component(Iframe)
         .options({
-          url: `${"http://localhost:5173"}/preview`,
+          url: `${
+            import.meta.env.VITE_PUBLIC_SANITY_URL || "http://localhost:5173"
+          }/preview`,
           defaultSize: `desktop`,
           reload: {
             button: true,
