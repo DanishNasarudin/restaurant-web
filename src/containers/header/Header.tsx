@@ -13,7 +13,10 @@ const Header = () => {
           Enjoy a spicy turmeric fried dish with chicken, meat, squid, or shrimp
           served with a special sambal.
         </p>
-        <Button links="#test" text="Order Now" />
+        <Button
+          links="https://www.foodpanda.my/restaurant/o3fl/mat-rock-special-ayam-goreng-kunyit-kampung-pandan"
+          text="Order Now"
+        />
       </div>
       <div className="header__artwork">
         <img src={graphic} alt="graphic" />

@@ -8,7 +8,7 @@ import {
   Offers,
   Socials,
 } from "./containers";
-import { Navbar } from "./components";
+import { Banner, Navbar } from "./components";
 import { motion as m } from "framer-motion";
 
 function App() {
@@ -40,9 +40,15 @@ function App() {
 
   return (
     <div className="App">
-      <div id="navbar-bg" className="navbar__bg">
-        <Navbar BooleanArray={BooleanArray} />
+      <div className="App__topnav">
+        <div className="banner__bg">
+          <Banner />
+        </div>
+        <div id="navbar-bg" className="navbar__bg">
+          <Navbar BooleanArray={BooleanArray} />
+        </div>
       </div>
+
       <m.div
         className="App__container"
         initial={{ opacity: 0 }}

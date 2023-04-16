@@ -4,7 +4,7 @@ import { RiMenuLine, RiCloseLine } from "react-icons/ri";
 import logo from "../../assets/MatRock-logo.svg";
 import Button from "../button/Button";
 import { Link } from "react-router-dom";
-import { MenuLinkToId, useBasePath } from "..";
+import { Banner, MenuLinkToId, useBasePath } from "..";
 
 interface NavbarProps {
   BooleanArray: {
@@ -26,56 +26,73 @@ const Navbar = ({ BooleanArray }: NavbarProps) => {
   };
 
   return (
-    <div className="restaurant__navbar">
-      <div className="restaurant__navbar-links">
-        <div className="restaurant__navbar-links_logo">
-          <Link to={basePath}>
-            <img src={logo} alt="logo" />
-          </Link>
-        </div>
-        <div className="restaurant__navbar-links_container">
-          <Menu handleClick={handleClick} BooleanArray={BooleanArray} />
-          <div className="links_container-style">
-            {toggleButton ? (
-              <a href="#ordernow">Order Now</a>
+    <>
+      <div className="restaurant__navbar">
+        <div className="restaurant__navbar-links">
+          <div className="restaurant__navbar-links_logo">
+            <Link to={basePath}>
+              <img src={logo} alt="logo" />
+            </Link>
+          </div>
+          <div className="restaurant__navbar-links_container">
+            <Menu handleClick={handleClick} BooleanArray={BooleanArray} />
+            <div className="links_container-style">
+              {toggleButton ? (
+                <a
+                  href="https://www.foodpanda.my/restaurant/o3fl/mat-rock-special-ayam-goreng-kunyit-kampung-pandan"
+                  target={"_blank"}
+                >
+                  Order Now
+                </a>
+              ) : (
+                <Button
+                  links="https://www.foodpanda.my/restaurant/o3fl/mat-rock-special-ayam-goreng-kunyit-kampung-pandan"
+                  text="Order Now"
+                />
+              )}
+            </div>
+          </div>
+          <div className="restaurant__navbar-menu">
+            {toggleMenu ? (
+              <RiCloseLine
+                color="#000000"
+                size={27}
+                onClick={() => setToggleMenu(false)}
+              />
             ) : (
-              <Button links="#onlineorder" text="Order Now" />
+              <RiMenuLine
+                color="#000000"
+                size={27}
+                onClick={() => setToggleMenu(true)}
+              />
+            )}
+            {toggleMenu && (
+              <div className="restaurant__navbar-menu_container">
+                <div className="restaurant__navbar-menu_container-links">
+                  <Menu handleClick={handleClick} BooleanArray={BooleanArray} />
+                </div>
+              </div>
             )}
           </div>
         </div>
-        <div className="restaurant__navbar-menu">
-          {toggleMenu ? (
-            <RiCloseLine
-              color="#000000"
-              size={27}
-              onClick={() => setToggleMenu(false)}
-            />
+        <div className="restaurant__navbar-menu_button">
+          {toggleButton ? (
+            <a
+              href="https://www.foodpanda.my/restaurant/o3fl/mat-rock-special-ayam-goreng-kunyit-kampung-pandan"
+              style={{ display: "none" }}
+              target={"_blank"}
+            >
+              Order Now
+            </a>
           ) : (
-            <RiMenuLine
-              color="#000000"
-              size={27}
-              onClick={() => setToggleMenu(true)}
+            <Button
+              links="https://www.foodpanda.my/restaurant/o3fl/mat-rock-special-ayam-goreng-kunyit-kampung-pandan"
+              text="Order Now"
             />
-          )}
-          {toggleMenu && (
-            <div className="restaurant__navbar-menu_container">
-              <div className="restaurant__navbar-menu_container-links">
-                <Menu handleClick={handleClick} BooleanArray={BooleanArray} />
-              </div>
-            </div>
           )}
         </div>
       </div>
-      <div className="restaurant__navbar-menu_button">
-        {toggleButton ? (
-          <a href="#" style={{ display: "none" }}>
-            Order Now
-          </a>
-        ) : (
-          <Button links="#onlineorder" text="Order Now" />
-        )}
-      </div>
-    </div>
+    </>
   );
 };
 

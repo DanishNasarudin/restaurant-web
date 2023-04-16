@@ -4,7 +4,8 @@
   font-family: var(--font-family);
 }
 
-.post__navbar {
+.post__navbar,
+.post__topNav {
   position: -webkit-sticky;
   position: sticky;
   top: 0;

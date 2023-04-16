@@ -4,7 +4,7 @@ import Navbar from "../navbar/Navbar";
 import "./post.css";
 import imageURL from "@sanity/image-url";
 import { getImageDimensions } from "@sanity/asset-utils";
-import { useBasePath } from "..";
+import { Banner, useBasePath } from "..";
 import { Footer } from "../../containers";
 import { motion as m } from "framer-motion";
 
@@ -33,8 +33,13 @@ function Post() {
 
   return (
     <div className="post__container">
-      <div className="post__navbar">
-        <Navbar BooleanArray={BooleanArray} />
+      <div className="post__topNav">
+        <div className="post__banner">
+          <Banner />
+        </div>
+        <div className="post__navbar">
+          <Navbar BooleanArray={BooleanArray} />
+        </div>
       </div>
       <m.div
         className="post__body"

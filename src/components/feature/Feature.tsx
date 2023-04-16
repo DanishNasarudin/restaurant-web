@@ -14,7 +14,10 @@ const Feature = ({ bannerImg, bannerAlt, title, desc }: FeatureProp) => {
       <div className="feature__banner">
         <img src={bannerImg} alt={bannerAlt} />
         <div className="feature__banner-button">
-          <Button links="#" text="Order" />
+          <Button
+            links="https://www.foodpanda.my/restaurant/o3fl/mat-rock-special-ayam-goreng-kunyit-kampung-pandan"
+            text="Order"
+          />
         </div>
       </div>
       <div className="feature__texts">

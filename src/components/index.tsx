@@ -7,6 +7,7 @@ export { default as Social } from "./social/Social";
 export { default as Button } from "./button/Button";
 export { default as Post } from "./post/Post";
 export { default as Loading } from "./loading/Loading";
+export { default as Banner } from "./banner/Banner";
 export { default as Notfound } from "./notfound/Notfound";
 export { default as ScrollToTop } from "./utils/ScrollToTop";
 export { default as MenuLinkToId } from "./utils/MenuLinkToId";

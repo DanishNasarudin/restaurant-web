@@ -127,9 +127,9 @@
 .restaurant__navbar-menu_button {
   display: none;
   position: absolute;
-  bottom: -100vh;
+  bottom: -90vh;
   left: 50%;
-  transform: translate(-50%, -150%);
+  transform: translate(-50%, 0);
 }
 
 @media screen and (max-width: 784px) {

@@ -1,0 +1,22 @@
+.banner__container {
+  position: sticky;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 0.2rem 2rem;
+  font-size: calc(var(--font-16px) - 2px);
+  text-align: center;
+  background-color: var(--color-subtext);
+  color: black;
+  font-weight: bold;
+}
+
+.banner__texts b {
+  color: red;
+}
+
+.banner__container mark {
+  all: unset;
+  /* color: white; */
+  text-decoration: underline;
+}
