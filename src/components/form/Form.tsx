@@ -2,13 +2,13 @@ import { useState } from "react";
 import "./form.css";
 import emailjs from "@emailjs/browser";
 
-// const service_id = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-// const template_id = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-// const user_id = import.meta.env.VITE_EMAILJS_PUBLIC_ID;
+const service_id = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const template_id = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const user_id = import.meta.env.VITE_EMAILJS_PUBLIC_ID;
 
-const service_id = "import.meta.env.VITE_EMAILJS_SERVICE_ID";
-const template_id = "import.meta.env.VITE_EMAILJS_TEMPLATE_ID";
-const user_id = "import.meta.env.VITE_EMAILJS_PUBLIC_ID";
+// const service_id = "import.meta.env.VITE_EMAILJS_SERVICE_ID";
+// const template_id = "import.meta.env.VITE_EMAILJS_TEMPLATE_ID";
+// const user_id = "import.meta.env.VITE_EMAILJS_PUBLIC_ID";
 
 const Form = () => {
   const [formSubmitIsActive, setFormSubmitIsActive] = useState(false);
