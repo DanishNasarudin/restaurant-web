@@ -10,8 +10,6 @@ if (!projectId || !dataset) {
 const usePreview = definePreview({
   projectId,
   dataset,
-  onPublicAccessOnly: () =>
-    alert("You are not logged in. You will only see public data."),
 });
 
 export default usePreview;
